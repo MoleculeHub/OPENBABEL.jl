@@ -13,16 +13,17 @@ function test(input_smiles, io::IOBuffer=IOBuffer())
         write(file, "$smile\n")
     end
     close(file)
-    cmd = addenv(`$(obabel()) -ismi $temp_file -oinchi`,
+    cmd = addenv(`$(obabel()) -iinchi $temp_file -osmi`,
             "BABEL_LIBDIR" => libdir,
             "BABEL_DATADIR" => datadir);
     cmd = pipeline(cmd, stdout=io, stderr=devnull) |> run
     rm(temp_file)
     out = take!(io) |> String
-    return out
+    return split(out, r"\s+")
 end
 
-smiles = repeat(["CNCCSCCOC(O)CC(=O)"], 10^5)
+i = "InChI=1S/C12H19N3O/c13-9-15-7-10(8-15)6-14-12(16)11-4-2-1-3-5-11/h10-11H,1-8H2,(H,14,16)"
+smiles = repeat([i], 10^6)
 @time begin
     test(smiles)
 end
