@@ -3,13 +3,13 @@ using openbabel_jll
 include("./config.jl")
 include("./utils.jl")
 
-run(addenv(`$(obabel()) -ismi -:"CCC" -oinchi`,
+run(addenv(`$(obabel()) -ismi -:"CCsdfsdC" -oinchi`,
           "BABEL_LIBDIR" => libdir,
           "BABEL_DATADIR" => datadir
           ));
 
 io = IOBuffer()
-cmd = addenv(`$(obabel()) -ismi -:"CCC" -omol`,
+cmd = addenv(`$(obabel()) -ismi -:"CaCC" -omol`,
           "BABEL_LIBDIR" => libdir,
           "BABEL_DATADIR" => datadir
           )
@@ -18,9 +18,15 @@ run(cmd)
 String(take!(io))
 
 
+using Chain
+@chain 5 begin
+    sqrt
+    replace(_, "A" => "5")
+end
 
-
-
+5 |>
+    x -> sqrt(x) |>
+    x -> replace(x, "A" => "5")
 
 
 
