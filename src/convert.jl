@@ -19,6 +19,8 @@ function convert_molecule(input::String,
           x -> make_obabel_cmd(x, input_format, output_format) |>
                x -> pipeline(x, stdout = io, stderr = devnull) |>
                     run
-    out = take!(io) |> String
-    return replace(out, r"\s+" => "")
+    out = take!(io) |> 
+            String  |> 
+            x -> split(x, r"\s+")
+    return out 
 end
