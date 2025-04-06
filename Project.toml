@@ -1,0 +1,13 @@
+name = "Openbabel"
+uuid = "2a3b4ccc-5517-4f81-8dec-e98b499b9516"
+authors = ["Victor Cano Gil <vcanogil@gmail.com> and contributors"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.10"
+
+[targets]
+test = ["Test"]
