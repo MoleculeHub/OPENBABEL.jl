@@ -1,14 +1,14 @@
 using Documenter
-using OPENBABEL
+using OpenBabel
 
 makedocs(;
-    modules=[OPENBABEL],
+    modules=[OpenBabel],
     authors="Your Name",
-    repo="https://github.com/MoleculeHub/OPENBABEL.jl/blob/{commit}{path}#{line}",
-    sitename="OPENBABEL.jl",
+    repo="https://github.com/MoleculeHub/OpenBabel.jl/blob/{commit}{path}#{line}",
+    sitename="OpenBabel.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://MoleculeHub.github.io/OPENBABEL.jl",
+        canonical="https://MoleculeHub.github.io/OpenBabel.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -26,4 +26,4 @@ makedocs(;
     ],
 )
 
-deploydocs(; repo="github.com/MoleculeHub/OPENBABEL.jl", devbranch="main")
+deploydocs(; repo="github.com/MoleculeHub/OpenBabel.jl", devbranch="main")

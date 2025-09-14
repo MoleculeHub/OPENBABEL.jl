@@ -1,13 +1,13 @@
 # Examples
 
-This page provides comprehensive examples of using OPENBABEL.jl for common molecular data processing tasks.
+This page provides comprehensive examples of using OpenBabel.jl for common molecular data processing tasks.
 
 ## Basic File Conversion
 
 ### SMILES to SDF Conversion
 
 ```julia
-using OPENBABEL
+using OpenBabel
 using Chain
 
 # Convert SMILES to SDF with 3D coordinates and properties

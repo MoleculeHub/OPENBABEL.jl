@@ -1,8 +1,8 @@
-using OPENBABEL
+using OpenBabel
 using Test
 using Chain
 
-@testset "OPENBABEL Macro Tests" begin
+@testset "OpenBabel Macro Tests" begin
     @testset "Core I/O Macros" begin
         @testset "@read_file macro" begin
             # Test macro expansion

@@ -1,4 +1,4 @@
-using OPENBABEL
+using OpenBabel
 using Test
 using Chain
 

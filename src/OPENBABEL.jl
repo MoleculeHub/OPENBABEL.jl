@@ -1,4 +1,4 @@
-module OPENBABEL
+module OpenBabel
 
 using openbabel_jll
 using Chain
