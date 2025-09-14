@@ -54,9 +54,9 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using Openbabel
-            DocMeta.setdocmeta!(Openbabel, :DocTestSetup, :(using Openbabel); recursive=true)
-            doctest(Openbabel)'
+            using OpenBabel
+            DocMeta.setdocmeta!(OpenBabel, :DocTestSetup, :(using OpenBabel); recursive=true)
+            doctest(OpenBabel)'
       - run: julia --project=docs docs/make.jl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
