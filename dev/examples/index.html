@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Examples · MoleculeFile.jl</title><meta name="title" content="Examples · MoleculeFile.jl"/><meta property="og:title" content="Examples · MoleculeFile.jl"/><meta property="twitter:title" content="Examples · MoleculeFile.jl"/><meta name="description" content="Documentation for MoleculeFile.jl."/><meta property="og:description" content="Documentation for MoleculeFile.jl."/><meta property="twitter:description" content="Documentation for MoleculeFile.jl."/><meta property="og:url" content="https://MoleculeHub.github.io/OPENBABEL.jl/examples/"/><meta property="twitter:url" content="https://MoleculeHub.github.io/OPENBABEL.jl/examples/"/><link rel="canonical" href="https://MoleculeHub.github.io/OPENBABEL.jl/examples/"/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">MoleculeFile.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li class="is-active"><a class="tocitem" href>Examples</a><ul class="internal"><li><a class="tocitem" href="#Basic-File-Conversion"><span>Basic File Conversion</span></a></li><li><a class="tocitem" href="#Drug-Discovery-Workflows"><span>Drug Discovery Workflows</span></a></li><li><a class="tocitem" href="#Chemical-Database-Processing"><span>Chemical Database Processing</span></a></li><li><a class="tocitem" href="#Structure-Activity-Relationships"><span>Structure-Activity Relationships</span></a></li><li><a class="tocitem" href="#Specialized-Chemical-Applications"><span>Specialized Chemical Applications</span></a></li><li><a class="tocitem" href="#Quality-Control-and-Validation"><span>Quality Control and Validation</span></a></li><li><a class="tocitem" href="#Performance-Optimization"><span>Performance Optimization</span></a></li></ul></li><li><span class="tocitem">API Reference</span><ul><li><a class="tocitem" href="../api/io/">Core I/O Macros</a></li><li><a class="tocitem" href="../api/properties/">Property &amp; Coordinate Macros</a></li><li><a class="tocitem" href="../api/filtering/">Filtering &amp; Matching Macros</a></li><li><a class="tocitem" href="../api/energy/">Energy &amp; Advanced Macros</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Examples</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/MoleculeHub/OPENBABEL.jl/blob/main/docs/src/examples.md#" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h1><p>This page provides comprehensive examples of using MoleculeFile.jl for common molecular data processing tasks.</p><h2 id="Basic-File-Conversion"><a class="docs-heading-anchor" href="#Basic-File-Conversion">Basic File Conversion</a><a id="Basic-File-Conversion-1"></a><a class="docs-heading-anchor-permalink" href="#Basic-File-Conversion" title="Permalink"></a></h2><h3 id="SMILES-to-SDF-Conversion"><a class="docs-heading-anchor" href="#SMILES-to-SDF-Conversion">SMILES to SDF Conversion</a><a id="SMILES-to-SDF-Conversion-1"></a><a class="docs-heading-anchor-permalink" href="#SMILES-to-SDF-Conversion" title="Permalink"></a></h3><pre><code class="language-julia hljs">using MoleculeFile
+using Chain
+
+# Convert SMILES to SDF with 3D coordinates and properties
+@chain begin
+    @read_file(&quot;input.smi&quot;, &quot;smi&quot;)
+    @gen_3D_coords(&quot;fast&quot;)
+    @add_properties([&quot;MW&quot;, &quot;logP&quot;, &quot;TPSA&quot;])
+    @output_as(&quot;output.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h3 id="Batch-File-Processing"><a class="docs-heading-anchor" href="#Batch-File-Processing">Batch File Processing</a><a id="Batch-File-Processing-1"></a><a class="docs-heading-anchor-permalink" href="#Batch-File-Processing" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Process multiple molecules into separate files
+@chain begin
+    @read_file(&quot;database.smi&quot;, &quot;smi&quot;)
+    @gen_2D_coords()
+    @add_index()
+    @write_multiple_files()
+    @output_as(&quot;molecule&quot;, &quot;mol&quot;)  # Creates molecule1.mol, molecule2.mol, etc.
+    @execute
+end</code></pre><h2 id="Drug-Discovery-Workflows"><a class="docs-heading-anchor" href="#Drug-Discovery-Workflows">Drug Discovery Workflows</a><a id="Drug-Discovery-Workflows-1"></a><a class="docs-heading-anchor-permalink" href="#Drug-Discovery-Workflows" title="Permalink"></a></h2><h3 id="Lead-Compound-Filtering"><a class="docs-heading-anchor" href="#Lead-Compound-Filtering">Lead Compound Filtering</a><a id="Lead-Compound-Filtering-1"></a><a class="docs-heading-anchor-permalink" href="#Lead-Compound-Filtering" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Filter compounds by Lipinski&#39;s Rule of Five
+@chain begin
+    @read_file(&quot;compound_library.sdf&quot;, &quot;sdf&quot;)
+    @add_properties([&quot;MW&quot;, &quot;logP&quot;, &quot;HBD&quot;, &quot;HBA&quot;])
+    @match_smarts_string(&quot;[!#1]&quot;)  # Must contain non-hydrogen atoms
+    @sort_by(&quot;MW&quot;)
+    @output_as(&quot;filtered_compounds.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end
+
+# Additional filtering can be done in Julia
+# Filter by Lipinski&#39;s Rule of Five criteria</code></pre><h3 id="Virtual-Screening-Pipeline"><a class="docs-heading-anchor" href="#Virtual-Screening-Pipeline">Virtual Screening Pipeline</a><a id="Virtual-Screening-Pipeline-1"></a><a class="docs-heading-anchor-permalink" href="#Virtual-Screening-Pipeline" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Prepare compounds for virtual screening
+@chain begin
+    @read_file(&quot;screening_library.smi&quot;, &quot;smi&quot;)
+    @ignore_bad_molecules()
+    @remove_duplicate_mols()
+    @gen_3D_coords(&quot;med&quot;)
+    @minimize_energy(&quot;MMFF94&quot;)
+    @add_partial_charges(&quot;gasteiger&quot;)
+    @canonicalize()
+    @add_properties([&quot;MW&quot;, &quot;logP&quot;, &quot;TPSA&quot;, &quot;rotors&quot;])
+    @sort_by_reverse(&quot;MW&quot;)
+    @output_as(&quot;screening_ready.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h2 id="Chemical-Database-Processing"><a class="docs-heading-anchor" href="#Chemical-Database-Processing">Chemical Database Processing</a><a id="Chemical-Database-Processing-1"></a><a class="docs-heading-anchor-permalink" href="#Chemical-Database-Processing" title="Permalink"></a></h2><h3 id="Large-Dataset-Cleaning"><a class="docs-heading-anchor" href="#Large-Dataset-Cleaning">Large Dataset Cleaning</a><a id="Large-Dataset-Cleaning-1"></a><a class="docs-heading-anchor-permalink" href="#Large-Dataset-Cleaning" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Clean and standardize a large chemical database
+@chain begin
+    @read_file(&quot;raw_database.sdf&quot;, &quot;sdf&quot;)
+    @ignore_bad_molecules()          # Skip invalid structures
+    @remove_duplicate_mols()         # Remove duplicates
+    @separate_fragments()            # Split salt complexes
+    @remove_hydrogens()              # Use implicit hydrogens
+    @set_atom_order_canonical()      # Standardize atom ordering
+    @dont_match_smarts_string(&quot;[Na,K,Cl,Br]&quot;)  # Remove simple salts
+    @add_properties([&quot;MW&quot;, &quot;atoms&quot;, &quot;bonds&quot;])
+    @sort_by(&quot;MW&quot;)
+    @output_as(&quot;clean_database.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h3 id="Property-Based-Filtering"><a class="docs-heading-anchor" href="#Property-Based-Filtering">Property-Based Filtering</a><a id="Property-Based-Filtering-1"></a><a class="docs-heading-anchor-permalink" href="#Property-Based-Filtering" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Extract drug-like molecules based on molecular properties
+@chain begin
+    @read_file(&quot;compound_collection.sdf&quot;, &quot;sdf&quot;)
+    @add_properties([&quot;MW&quot;, &quot;logP&quot;, &quot;TPSA&quot;, &quot;HBD&quot;, &quot;HBA&quot;, &quot;rotors&quot;])
+    # Following steps would need additional Julia filtering
+    @match_smarts_string(&quot;[#6,#7,#8,#16,#15,#9,#17,#35,#53]&quot;)  # Common drug atoms
+    @dont_match_smarts_string(&quot;[Pb,Hg,As,Cd]&quot;)  # Exclude toxic metals
+    @output_as(&quot;druglike_molecules.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h2 id="Structure-Activity-Relationships"><a class="docs-heading-anchor" href="#Structure-Activity-Relationships">Structure-Activity Relationships</a><a id="Structure-Activity-Relationships-1"></a><a class="docs-heading-anchor-permalink" href="#Structure-Activity-Relationships" title="Permalink"></a></h2><h3 id="Scaffold-Analysis"><a class="docs-heading-anchor" href="#Scaffold-Analysis">Scaffold Analysis</a><a id="Scaffold-Analysis-1"></a><a class="docs-heading-anchor-permalink" href="#Scaffold-Analysis" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Generate molecular scaffolds for SAR analysis
+@chain begin
+    @read_file(&quot;active_compounds.sdf&quot;, &quot;sdf&quot;)
+    @remove_hydrogens()
+    @set_atom_order_canonical()
+    @add_properties([&quot;MW&quot;, &quot;rotors&quot;, &quot;rings&quot;])
+    @sort_by(&quot;rings&quot;)
+    @output_as(&quot;scaffolds.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h3 id="Conformer-Generation-for-Flexibility-Analysis"><a class="docs-heading-anchor" href="#Conformer-Generation-for-Flexibility-Analysis">Conformer Generation for Flexibility Analysis</a><a id="Conformer-Generation-for-Flexibility-Analysis-1"></a><a class="docs-heading-anchor-permalink" href="#Conformer-Generation-for-Flexibility-Analysis" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Generate conformers to study molecular flexibility
+@chain begin
+    @read_file(&quot;flexible_molecules.smi&quot;, &quot;smi&quot;)
+    @gen_3D_coords(&quot;slow&quot;)
+    @generate_conformers()
+    @minimize_energy(&quot;MMFF94&quot;)
+    @calculate_energy(&quot;MMFF94&quot;)
+    @add_properties([&quot;rotors&quot;, &quot;MW&quot;])
+    @sort_by(&quot;Energy&quot;)
+    @output_as(&quot;conformer_ensemble.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h2 id="Specialized-Chemical-Applications"><a class="docs-heading-anchor" href="#Specialized-Chemical-Applications">Specialized Chemical Applications</a><a id="Specialized-Chemical-Applications-1"></a><a class="docs-heading-anchor-permalink" href="#Specialized-Chemical-Applications" title="Permalink"></a></h2><h3 id="Natural-Product-Processing"><a class="docs-heading-anchor" href="#Natural-Product-Processing">Natural Product Processing</a><a id="Natural-Product-Processing-1"></a><a class="docs-heading-anchor-permalink" href="#Natural-Product-Processing" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Process natural product structures
+@chain begin
+    @read_file(&quot;natural_products.sdf&quot;, &quot;sdf&quot;)
+    @ignore_bad_molecules()
+    @gen_3D_coords(&quot;slow&quot;)  # High quality for complex structures
+    @center_coords_at_zero()
+    @add_properties([&quot;MW&quot;, &quot;logP&quot;, &quot;TPSA&quot;, &quot;rings&quot;, &quot;stereocenters&quot;])
+    @dont_match_smarts_string(&quot;[Si,B,Al]&quot;)  # Remove unusual atoms
+    @sort_by_reverse(&quot;rings&quot;)  # Complex ring systems first
+    @output_as(&quot;processed_np.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h3 id="Fragment-Library-Generation"><a class="docs-heading-anchor" href="#Fragment-Library-Generation">Fragment Library Generation</a><a id="Fragment-Library-Generation-1"></a><a class="docs-heading-anchor-permalink" href="#Fragment-Library-Generation" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Create fragment library from larger molecules
+@chain begin
+    @read_file(&quot;parent_compounds.smi&quot;, &quot;smi&quot;)
+    @separate_fragments()        # Split into fragments
+    @remove_duplicate_mols()     # Remove duplicate fragments
+    @match_smarts_string(&quot;[#6,#7,#8]&quot;)  # Keep C, N, O containing fragments
+    @add_properties([&quot;MW&quot;, &quot;atoms&quot;, &quot;HBA&quot;, &quot;HBD&quot;])
+    @sort_by(&quot;MW&quot;)
+    @output_as(&quot;fragment_library.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h2 id="Quality-Control-and-Validation"><a class="docs-heading-anchor" href="#Quality-Control-and-Validation">Quality Control and Validation</a><a id="Quality-Control-and-Validation-1"></a><a class="docs-heading-anchor-permalink" href="#Quality-Control-and-Validation" title="Permalink"></a></h2><h3 id="Structure-Validation-Pipeline"><a class="docs-heading-anchor" href="#Structure-Validation-Pipeline">Structure Validation Pipeline</a><a id="Structure-Validation-Pipeline-1"></a><a class="docs-heading-anchor-permalink" href="#Structure-Validation-Pipeline" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Validate and clean chemical structures
+@chain begin
+    @read_file(&quot;unchecked_structures.sdf&quot;, &quot;sdf&quot;)
+    @ignore_bad_molecules()      # Skip unparseable structures
+    @canonicalize()              # Standardize representation
+    @convert_dative_bonds()      # Handle coordination bonds
+    @add_properties([&quot;formula&quot;, &quot;MW&quot;, &quot;atoms&quot;, &quot;bonds&quot;])
+    @add_filename()              # Track original source
+    @add_index()                 # Add unique identifiers
+    @output_as(&quot;validated_structures.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h3 id="Duplicate-Detection-and-Removal"><a class="docs-heading-anchor" href="#Duplicate-Detection-and-Removal">Duplicate Detection and Removal</a><a id="Duplicate-Detection-and-Removal-1"></a><a class="docs-heading-anchor-permalink" href="#Duplicate-Detection-and-Removal" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Advanced duplicate detection workflow
+@chain begin
+    @read_file(&quot;merged_database.sdf&quot;, &quot;sdf&quot;)
+    @canonicalize()              # Ensure consistent representation
+    @remove_hydrogens()          # Compare without explicit H
+    @set_atom_order_canonical()  # Standard atom ordering
+    @remove_duplicate_mols()     # Remove exact duplicates
+    @add_properties([&quot;InChI&quot;])   # Add InChI for further comparison
+    @sort_by(&quot;MW&quot;)
+    @output_as(&quot;deduplicated_database.sdf&quot;, &quot;sdf&quot;)
+    @execute
+end</code></pre><h2 id="Performance-Optimization"><a class="docs-heading-anchor" href="#Performance-Optimization">Performance Optimization</a><a id="Performance-Optimization-1"></a><a class="docs-heading-anchor-permalink" href="#Performance-Optimization" title="Permalink"></a></h2><h3 id="Processing-Large-Datasets-Efficiently"><a class="docs-heading-anchor" href="#Processing-Large-Datasets-Efficiently">Processing Large Datasets Efficiently</a><a id="Processing-Large-Datasets-Efficiently-1"></a><a class="docs-heading-anchor-permalink" href="#Processing-Large-Datasets-Efficiently" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Efficient processing of large chemical databases
+function process_large_database(input_file, output_file, start_idx=1, batch_size=10000)
+    current_idx = start_idx
+    batch_num = 1
+
+    while true
+        try
+            @chain begin
+                @read_file(input_file, &quot;sdf&quot;)
+                @start_with_index(current_idx)
+                @ignore_bad_molecules()
+                @add_properties([&quot;MW&quot;, &quot;logP&quot;])
+                @output_as(&quot;$(output_file)_batch_$(batch_num).sdf&quot;, &quot;sdf&quot;)
+                @execute
+            end
+
+            current_idx += batch_size
+            batch_num += 1
+        catch
+            break  # End of file reached
+        end
+    end
+end
+
+# Usage
+process_large_database(&quot;huge_database.sdf&quot;, &quot;processed&quot;, 1, 5000)</code></pre><h3 id="Memory-Efficient-Processing"><a class="docs-heading-anchor" href="#Memory-Efficient-Processing">Memory-Efficient Processing</a><a id="Memory-Efficient-Processing-1"></a><a class="docs-heading-anchor-permalink" href="#Memory-Efficient-Processing" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Process files in chunks to manage memory usage
+@chain begin
+    @read_file(&quot;large_dataset.sdf&quot;, &quot;sdf&quot;)
+    @start_with_index(1)         # Start from beginning
+    @ignore_bad_molecules()      # Skip problematic structures
+    @gen_3D_coords(&quot;fast&quot;)       # Use fast method for efficiency
+    @add_properties([&quot;MW&quot;])      # Minimal properties for speed
+    @write_multiple_files()      # Separate files reduce memory
+    @output_as(&quot;chunk&quot;, &quot;sdf&quot;)   # Creates chunk1.sdf, chunk2.sdf, etc.
+    @execute
+end</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/io/">Core I/O Macros »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Sunday 14 September 2025 19:07">Sunday 14 September 2025</span>. Using Julia version 1.11.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
