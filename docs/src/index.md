@@ -1,4 +1,4 @@
-# OPENBABEL.jl
+# OpenBabel.jl
 
 A Julia library for reading, writing, and transforming chemical data, powered by [Open Babel](https://github.com/openbabel/openbabel).
 
@@ -6,13 +6,13 @@ A Julia library for reading, writing, and transforming chemical data, powered by
 
 ```julia
 using Pkg
-Pkg.add("OPENBABEL")
+Pkg.add("OpenBabel")
 ```
 
 ## Quick Start
 
 ```julia
-using OPENBABEL
+using OpenBabel
 using Chain
 
 # Write some random molecules to a file
@@ -35,7 +35,7 @@ end
 
 ## Core Concepts
 
-OPENBABEL.jl provides a macro-based API that chains operations together, replicating Open Babel's command-line functionality:
+OpenBabel.jl provides a macro-based API that chains operations together, replicating Open Babel's command-line functionality:
 
 ```bash
 obabel -iformat_1 file_1 -oformat_2 -O file_2 -arg_1 ... -arg_n

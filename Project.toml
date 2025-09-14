@@ -1,4 +1,4 @@
-name = "OPENBABEL"
+name = "OpenBabel"
 uuid = "2a3b4ccc-5517-4f81-8dec-e98b499b9516"
 authors = ["Renée Gil"]
 version = "0.1.0"

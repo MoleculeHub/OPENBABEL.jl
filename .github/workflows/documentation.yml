@@ -40,6 +40,6 @@ jobs:
         shell: julia --project=docs --color=yes {0}
         run: |
           using Documenter: DocMeta, doctest
-          using OPENBABEL
-          DocMeta.setdocmeta!(OPENBABEL, :DocTestSetup, :(using OPENBABEL); recursive=true)
-          doctest(OPENBABEL)
+          using OpenBabel
+          DocMeta.setdocmeta!(OpenBabel, :DocTestSetup, :(using OpenBabel); recursive=true)
+          doctest(OpenBabel)

@@ -1,7 +1,7 @@
-using OPENBABEL
+using OpenBabel
 using Test
 
-@testset "OPENBABEL.jl Tests" begin
+@testset "OpenBabel.jl Tests" begin
     include("test_simple.jl")
     include("test_aqua.jl")
     include("test_macros.jl")
