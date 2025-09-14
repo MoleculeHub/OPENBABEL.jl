@@ -1,6 +1,11 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+
+[extras]
 OpenBabel = "2a3b4ccc-5517-4f81-8dec-e98b499b9516"
 
 [compat]
 Documenter = "1"
+
+[targets]
+test = ["OpenBabel"]
