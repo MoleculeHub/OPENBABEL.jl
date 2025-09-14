@@ -14,8 +14,7 @@ concurrency:
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 
 jobs:
-  docs:
-    name: Documentation
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -25,11 +24,12 @@ jobs:
       - uses: julia-actions/setup-julia@v1
         with:
           version: '1'
+      - uses: julia-actions/cache@v1
       - name: Configure doc environment
         shell: julia --project=docs --color=yes {0}
         run: |
           using Pkg
-          Pkg.develop(PackageSpec(path=ENV["GITHUB_WORKSPACE"]))
+          Pkg.develop(PackageSpec(path=pwd()))
           Pkg.instantiate()
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-docdeploy@v1
@@ -40,6 +40,6 @@ jobs:
         shell: julia --project=docs --color=yes {0}
         run: |
           using Documenter: DocMeta, doctest
-          using OpenBabel
+          using OpenBabel 
           DocMeta.setdocmeta!(OpenBabel, :DocTestSetup, :(using OpenBabel); recursive=true)
           doctest(OpenBabel)

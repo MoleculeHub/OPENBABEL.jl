@@ -3,7 +3,7 @@ using OpenBabel
 
 makedocs(;
     modules=[OpenBabel],
-    authors="Your Name",
+    authors="Renée Gil",
     repo="https://github.com/MoleculeHub/OpenBabel.jl/blob/{commit}{path}#{line}",
     sitename="OpenBabel.jl",
     format=Documenter.HTML(;
