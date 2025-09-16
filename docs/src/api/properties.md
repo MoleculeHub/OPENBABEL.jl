@@ -2,35 +2,13 @@
 
 These macros add molecular properties, generate coordinates, and modify molecular metadata.
 
-## Property Calculation
+## Add Properties
 
 ```@docs
 @add_properties
 ```
 
-### Available Descriptors
-
-The `get_available_descriptors()` function returns a list of all molecular descriptors that can be calculated. If this function is not yet implemented, refer to the Open Babel documentation for available descriptors.
-
-## Coordinate Generation
-
-```@docs
-@gen_3D_coords
-@gen_2D_coords
-@center_coords_at_zero
-```
-
-## Metadata Addition
-
-```@docs
-@add_filename
-@add_index
-@add_title
-```
-
-## Usage Examples
-
-### Adding Molecular Properties
+### Usage Examples
 
 Calculate common molecular descriptors:
 
@@ -43,16 +21,7 @@ Calculate common molecular descriptors:
 end
 ```
 
-### Available Properties
-
-Get a list of all available descriptors:
-
-```julia
-descriptors = get_available_descriptors()
-println(descriptors)
-```
-
-Common properties include:
+Available properties include:
 - `MW` - Molecular weight
 - `logP` - Partition coefficient
 - `TPSA` - Topological polar surface area
@@ -62,9 +31,22 @@ Common properties include:
 - `atoms` - Number of atoms
 - `bonds` - Number of bonds
 
-### 3D Coordinate Generation
+### Available Descriptors
 
-Generate 3D structures with different quality levels:
+The `get_available_descriptors()` function returns a list of all molecular descriptors that can be calculated:
+
+```julia
+descriptors = get_available_descriptors()
+println(descriptors)
+```
+
+## Generate 3D Coordinates
+
+```@docs
+@gen_3D_coords
+```
+
+### Usage Examples
 
 ```julia
 # Fast generation (good for large datasets)
@@ -79,23 +61,132 @@ end
 @chain begin
     @read_file("input.smi", "smi")
     @gen_3D_coords("slow")
+    @output_as("high_quality_3d.mol", "mol")
+    @execute
+end
+```
+
+## Generate 2D Coordinates
+
+```@docs
+@gen_2D_coords
+```
+
+### Usage Examples
+
+Generate 2D coordinates for visualization:
+
+```julia
+@chain begin
+    @read_file("molecules.smi", "smi")
+    @gen_2D_coords()
+    @output_as("molecules_2d.sdf", "sdf")
+    @execute
+end
+```
+
+## Center Coordinates at Zero
+
+```@docs
+@center_coords_at_zero
+```
+
+### Usage Examples
+
+Center molecular coordinates at the origin:
+
+```julia
+@chain begin
+    @read_file("input.smi", "smi")
+    @gen_3D_coords("slow")
     @center_coords_at_zero()
     @output_as("centered_3d.mol", "mol")
     @execute
 end
 ```
 
-### Adding Metadata
+## Add Filename
 
-Add indices and filenames to track molecule origins:
+```@docs
+@add_filename
+```
+
+### Usage Examples
+
+Add the source filename as metadata:
 
 ```julia
 @chain begin
     @read_file("database.sdf", "sdf")
+    @add_filename()
+    @output_as("molecules_with_filename.sdf", "sdf")
+    @execute
+end
+```
+
+## Add Index
+
+```@docs
+@add_index
+```
+
+### Usage Examples
+
+Add molecule indices for tracking:
+
+```julia
+@chain begin
+    @read_file("molecules.sdf", "sdf")
+    @add_index()
+    @output_as("indexed_molecules.sdf", "sdf")
+    @execute
+end
+```
+
+## Add Title
+
+```@docs
+@add_title
+```
+
+### Usage Examples
+
+```julia
+@chain begin
+    @read_file("molecules.sdf", "sdf")
+    @add_title("Processed Database")
+    @output_as("titled_molecules.sdf", "sdf")
+    @execute
+end
+```
+
+## Complete Workflows
+
+### Property Calculation Pipeline
+
+```julia
+@chain begin
+    @read_file("molecules.smi", "smi")
+    @gen_3D_coords("med")
+    @add_properties(["MW", "logP", "TPSA", "HBD", "HBA"])
     @add_index()
     @add_filename()
-    @add_title("Processed Database")
-    @output_as("indexed_molecules.sdf", "sdf")
+    @output_as("full_analysis.sdf", "sdf")
+    @execute
+end
+```
+
+### Coordinate Generation with Metadata
+
+```julia
+@chain begin
+    @read_file("database.sdf", "sdf")
+    @gen_3D_coords("slow")
+    @center_coords_at_zero()
+    @add_index()
+    @add_filename()
+    @add_title("High Quality 3D Structures")
+    @output_as("processed_3d.sdf", "sdf")
     @execute
 end
 ```
