@@ -1,6 +1,6 @@
 # OpenBabel.jl
 
-A Julia library for reading, writing, and transforming chemical data, powered by [Open Babel](https://github.com/openbabel/openbabel).
+Julia bindings for [Open Babel](https://github.com/openbabel/openbabel) library.
 
 ## Installation
 
