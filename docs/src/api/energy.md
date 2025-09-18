@@ -2,26 +2,55 @@
 
 These macros perform energy calculations, geometry optimizations, and advanced molecular computations.
 
-## Energy Calculations
+## Calculate Energy
 
 ```@docs
 @calculate_energy
-@minimize_energy
-@add_partial_charges
 ```
 
-## Structure Generation
+### Usage Examples
+
+Calculate energy using different force fields:
+
+```julia
+# MMFF94 forcefield (default)
+@chain begin
+    @read_file("molecules.smi", "smi")
+    @gen_3D_coords("fast")
+    @calculate_energy("MMFF94")
+    @output_as("energies.sdf", "sdf")
+    @execute
+end
+
+# UFF forcefield
+@chain begin
+    @read_file("molecules.smi", "smi")
+    @gen_3D_coords("med")
+    @calculate_energy("UFF")
+    @output_as("uff_energies.sdf", "sdf")
+    @execute
+end
+```
+
+Energy ranking workflow:
+
+```julia
+@chain begin
+    @read_file("conformers.sdf", "sdf")
+    @calculate_energy("MMFF94")
+    @sort_by("Energy")  # Sort by ascending energy (most stable first)
+    @output_as("energy_ranked.sdf", "sdf")
+    @execute
+end
+```
+
+## Minimize Energy
 
 ```@docs
-@canonicalize
-@generate_conformers
+@minimize_energy
 ```
 
-## Usage Examples
-
-### Energy Minimization Workflow
-
-Optimize molecular geometries using different forcefields:
+### Usage Examples
 
 ```julia
 # MMFF94 forcefield (default)
@@ -29,7 +58,6 @@ Optimize molecular geometries using different forcefields:
     @read_file("molecules.smi", "smi")
     @gen_3D_coords("fast")
     @minimize_energy("MMFF94")
-    @calculate_energy("MMFF94")
     @output_as("optimized.sdf", "sdf")
     @execute
 end
@@ -44,19 +72,26 @@ end
 end
 ```
 
-### Available Forcefields
+Complete energy minimization workflow:
 
-| Forcefield | Description | Best for |
-|------------|-------------|----------|
-| `MMFF94` | Merck Molecular Force Field | General organic molecules |
-| `MMFF94s` | MMFF94 static | Static conformations |
-| `UFF` | Universal Force Field | Broad chemical space |
-| `GAFF` | General AMBER Force Field | Drug-like molecules |
-| `Ghemical` | Ghemical Force Field | Quick calculations |
+```julia
+@chain begin
+    @read_file("molecules.smi", "smi")
+    @gen_3D_coords("fast")
+    @minimize_energy("MMFF94")
+    @calculate_energy("MMFF94")
+    @output_as("optimized.sdf", "sdf")
+    @execute
+end
+```
 
-### Partial Charge Calculation
+## Add Partial Charges
 
-Add partial charges using different methods:
+```@docs
+@add_partial_charges
+```
+
+### Usage Examples
 
 ```julia
 # Gasteiger charges (default)
@@ -78,7 +113,7 @@ end
 end
 ```
 
-### Available Charge Methods
+Available charge methods:
 
 | Method | Description | Accuracy | Speed |
 |--------|-------------|----------|-------|
@@ -88,7 +123,32 @@ end
 | `eqeq` | EQEq charges | Medium | Fast |
 | `eem` | Electronegativity Equalization | Medium | Medium |
 
-### Conformer Generation
+## Canonicalize
+
+```@docs
+@canonicalize
+```
+
+### Usage Examples
+
+Standardize molecular representation:
+
+```julia
+@chain begin
+    @read_file("compounds.smi", "smi")
+    @canonicalize()
+    @output_as("canonical_structures.smi", "smi")
+    @execute
+end
+```
+
+## Generate Conformers
+
+```@docs
+@generate_conformers
+```
+
+### Usage Examples
 
 Generate multiple conformations:
 
@@ -103,9 +163,19 @@ Generate multiple conformations:
 end
 ```
 
-### Complete Energy Workflow
+## Available Forcefields
 
-Comprehensive energy calculation pipeline:
+| Forcefield | Description | Best for |
+|------------|-------------|----------|
+| `MMFF94` | Merck Molecular Force Field | General organic molecules |
+| `MMFF94s` | MMFF94 static | Static conformations |
+| `UFF` | Universal Force Field | Broad chemical space |
+| `GAFF` | General AMBER Force Field | Drug-like molecules |
+| `Ghemical` | Ghemical Force Field | Quick calculations |
+
+## Complete Workflows
+
+### Comprehensive Energy Calculation Pipeline
 
 ```julia
 @chain begin
@@ -123,8 +193,6 @@ end
 ```
 
 ### Drug Discovery Pipeline
-
-Typical computational chemistry workflow for drug discovery:
 
 ```julia
 @chain begin

@@ -2,30 +2,15 @@
 
 These macros handle the fundamental input and output operations for molecular data files.
 
-## File Input
+## Read File
 
 ```@docs
 @read_file
 ```
 
-## File Output
+### Usage Examples
 
-```@docs
-@output_as
-@write_multiple_files
-```
-
-## Pipeline Execution
-
-```@docs
-@execute
-```
-
-## Usage Examples
-
-### Basic File Conversion
-
-Convert SMILES to MOL format:
+Basic file reading with format specification:
 
 ```julia
 @chain begin
@@ -35,9 +20,40 @@ Convert SMILES to MOL format:
 end
 ```
 
-### Multiple Output Files
+## Output As
 
-Create separate files for each molecule:
+```@docs
+@output_as
+```
+
+### Usage Examples
+
+Convert and save to different formats:
+
+```julia
+# SMILES to SDF conversion
+@chain begin
+    @read_file("compounds.smi", "smi")
+    @gen_3D_coords("fast")
+    @output_as("compounds.sdf", "sdf")
+    @execute
+end
+
+# Multiple format outputs
+@chain begin
+    @read_file("molecules.sdf", "sdf")
+    @output_as("molecules.mol", "mol")
+    @execute
+end
+```
+
+## Write Multiple Files
+
+```@docs
+@write_multiple_files
+```
+
+### Usage Examples
 
 ```julia
 @chain begin
@@ -48,7 +64,26 @@ Create separate files for each molecule:
 end
 ```
 
-### Supported File Formats
+## Execute
+
+```@docs
+@execute
+```
+
+### Usage Examples
+
+Execute the processing pipeline:
+
+```julia
+@chain begin
+    @read_file("molecules.smi", "smi")
+    @add_properties(["MW", "logP"])
+    @output_as("processed.sdf", "sdf")
+    @execute  # This executes the entire pipeline
+end
+```
+
+## Supported File Formats
 
 The library supports all Open Babel file formats:
 
@@ -61,3 +96,26 @@ The library supports all Open Babel file formats:
 | PDB | `.pdb` | Protein Data Bank format |
 
 For a complete list, refer to the [Open Babel documentation](https://openbabel.org/docs/FileFormats/Overview.html).
+
+## Complete Workflows
+
+### Basic File Conversion
+
+```julia
+@chain begin
+    @read_file("molecules.smi", "smi")
+    @output_as("molecules.mol", "mol")
+    @execute
+end
+```
+
+### Batch Processing with Multiple Outputs
+
+```julia
+@chain begin
+    @read_file("database.sdf", "sdf")
+    @write_multiple_files()
+    @output_as("molecule", "mol")
+    @execute
+end
+```
