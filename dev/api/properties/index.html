@@ -4,7 +4,7 @@
     @add_properties([&quot;MW&quot;, &quot;logP&quot;, &quot;HBD&quot;, &quot;HBA&quot;])
     @output_as(&quot;molecules_with_props.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L53-L71">source</a></section></article><h3 id="Usage-Examples"><a class="docs-heading-anchor" href="#Usage-Examples">Usage Examples</a><a id="Usage-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Usage-Examples" title="Permalink"></a></h3><p>Calculate common molecular descriptors:</p><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L53-L71">source</a></section></article><h3 id="Usage-Examples"><a class="docs-heading-anchor" href="#Usage-Examples">Usage Examples</a><a id="Usage-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Usage-Examples" title="Permalink"></a></h3><p>Calculate common molecular descriptors:</p><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;molecules.smi&quot;, &quot;smi&quot;)
     @add_properties([&quot;MW&quot;, &quot;logP&quot;, &quot;TPSA&quot;, &quot;HBD&quot;, &quot;HBA&quot;])
     @output_as(&quot;molecules_with_props.sdf&quot;, &quot;sdf&quot;)
@@ -15,7 +15,7 @@ println(descriptors)</code></pre><h2 id="Generate-3D-Coordinates"><a class="docs
     @gen_3D_coords(&quot;fast&quot;)
     @output_as(&quot;output_3d.mol&quot;, &quot;mol&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L76-L94">source</a></section></article><h3 id="Usage-Examples-2"><a class="docs-heading-anchor" href="#Usage-Examples-2">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-2" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Fast generation (good for large datasets)
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L76-L94">source</a></section></article><h3 id="Usage-Examples-2"><a class="docs-heading-anchor" href="#Usage-Examples-2">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-2" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Fast generation (good for large datasets)
 @chain begin
     @read_file(&quot;input.smi&quot;, &quot;smi&quot;)
     @gen_3D_coords(&quot;fast&quot;)
@@ -34,7 +34,7 @@ end</code></pre><h2 id="Generate-2D-Coordinates"><a class="docs-heading-anchor" 
     @gen_2D_coords()
     @output_as(&quot;output_2d.mol&quot;, &quot;mol&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L99-L113">source</a></section></article><h3 id="Usage-Examples-3"><a class="docs-heading-anchor" href="#Usage-Examples-3">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-3" title="Permalink"></a></h3><p>Generate 2D coordinates for visualization:</p><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L99-L113">source</a></section></article><h3 id="Usage-Examples-3"><a class="docs-heading-anchor" href="#Usage-Examples-3">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-3" title="Permalink"></a></h3><p>Generate 2D coordinates for visualization:</p><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;molecules.smi&quot;, &quot;smi&quot;)
     @gen_2D_coords()
     @output_as(&quot;molecules_2d.sdf&quot;, &quot;sdf&quot;)
@@ -44,7 +44,7 @@ end</code></pre><h2 id="Center-Coordinates-at-Zero"><a class="docs-heading-ancho
     @center_coords_at_zero()
     @output_as(&quot;centered_molecules.mol&quot;, &quot;mol&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L341-L358">source</a></section></article><h3 id="Usage-Examples-4"><a class="docs-heading-anchor" href="#Usage-Examples-4">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-4" title="Permalink"></a></h3><p>Center molecular coordinates at the origin:</p><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L341-L358">source</a></section></article><h3 id="Usage-Examples-4"><a class="docs-heading-anchor" href="#Usage-Examples-4">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-4" title="Permalink"></a></h3><p>Center molecular coordinates at the origin:</p><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;input.smi&quot;, &quot;smi&quot;)
     @gen_3D_coords(&quot;slow&quot;)
     @center_coords_at_zero()
@@ -55,7 +55,7 @@ end</code></pre><h2 id="Add-Filename"><a class="docs-heading-anchor" href="#Add-
     @add_filename()
     @output_as(&quot;output_with_filenames.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L118-L135">source</a></section></article><h3 id="Usage-Examples-5"><a class="docs-heading-anchor" href="#Usage-Examples-5">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-5" title="Permalink"></a></h3><p>Add the source filename as metadata:</p><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L118-L135">source</a></section></article><h3 id="Usage-Examples-5"><a class="docs-heading-anchor" href="#Usage-Examples-5">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-5" title="Permalink"></a></h3><p>Add the source filename as metadata:</p><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;database.sdf&quot;, &quot;sdf&quot;)
     @add_filename()
     @output_as(&quot;molecules_with_filename.sdf&quot;, &quot;sdf&quot;)
@@ -65,7 +65,7 @@ end</code></pre><h2 id="Add-Index"><a class="docs-heading-anchor" href="#Add-Ind
     @add_index()
     @output_as(&quot;indexed_molecules.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L140-L157">source</a></section></article><h3 id="Usage-Examples-6"><a class="docs-heading-anchor" href="#Usage-Examples-6">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-6" title="Permalink"></a></h3><p>Add molecule indices for tracking:</p><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L140-L157">source</a></section></article><h3 id="Usage-Examples-6"><a class="docs-heading-anchor" href="#Usage-Examples-6">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-6" title="Permalink"></a></h3><p>Add molecule indices for tracking:</p><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;molecules.sdf&quot;, &quot;sdf&quot;)
     @add_index()
     @output_as(&quot;indexed_molecules.sdf&quot;, &quot;sdf&quot;)
@@ -75,7 +75,7 @@ end</code></pre><h2 id="Add-Title"><a class="docs-heading-anchor" href="#Add-Tit
     @add_title(&quot;Processed Compounds&quot;)
     @output_as(&quot;titled_compounds.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L162-L180">source</a></section></article><h3 id="Usage-Examples-7"><a class="docs-heading-anchor" href="#Usage-Examples-7">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-7" title="Permalink"></a></h3><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L162-L180">source</a></section></article><h3 id="Usage-Examples-7"><a class="docs-heading-anchor" href="#Usage-Examples-7">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-7" title="Permalink"></a></h3><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;molecules.sdf&quot;, &quot;sdf&quot;)
     @add_title(&quot;Processed Database&quot;)
     @output_as(&quot;titled_molecules.sdf&quot;, &quot;sdf&quot;)
@@ -97,4 +97,4 @@ end</code></pre><h3 id="Coordinate-Generation-with-Metadata"><a class="docs-head
     @add_title(&quot;High Quality 3D Structures&quot;)
     @output_as(&quot;processed_3d.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../io/">« Core I/O Macros</a><a class="docs-footer-nextpage" href="../filtering/">Filtering &amp; Matching Macros »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Thursday 18 September 2025 05:23">Thursday 18 September 2025</span>. Using Julia version 1.11.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+end</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../io/">« Core I/O Macros</a><a class="docs-footer-nextpage" href="../filtering/">Filtering &amp; Matching Macros »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Thursday 18 September 2025 20:52">Thursday 18 September 2025</span>. Using Julia version 1.11.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -5,7 +5,7 @@
     @calculate_energy(&quot;MMFF94&quot;)
     @output_as(&quot;energies.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L502-L521">source</a></section></article><h3 id="Usage-Examples"><a class="docs-heading-anchor" href="#Usage-Examples">Usage Examples</a><a id="Usage-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Usage-Examples" title="Permalink"></a></h3><p>Calculate energy using different force fields:</p><pre><code class="language-julia hljs"># MMFF94 forcefield (default)
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L502-L521">source</a></section></article><h3 id="Usage-Examples"><a class="docs-heading-anchor" href="#Usage-Examples">Usage Examples</a><a id="Usage-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Usage-Examples" title="Permalink"></a></h3><p>Calculate energy using different force fields:</p><pre><code class="language-julia hljs"># MMFF94 forcefield (default)
 @chain begin
     @read_file(&quot;molecules.smi&quot;, &quot;smi&quot;)
     @gen_3D_coords(&quot;fast&quot;)
@@ -33,7 +33,7 @@ end</code></pre><h2 id="Minimize-Energy"><a class="docs-heading-anchor" href="#M
     @minimize_energy(&quot;MMFF94&quot;)
     @output_as(&quot;minimized.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L526-L545">source</a></section></article><h3 id="Usage-Examples-2"><a class="docs-heading-anchor" href="#Usage-Examples-2">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-2" title="Permalink"></a></h3><pre><code class="language-julia hljs"># MMFF94 forcefield (default)
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L526-L545">source</a></section></article><h3 id="Usage-Examples-2"><a class="docs-heading-anchor" href="#Usage-Examples-2">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-2" title="Permalink"></a></h3><pre><code class="language-julia hljs"># MMFF94 forcefield (default)
 @chain begin
     @read_file(&quot;molecules.smi&quot;, &quot;smi&quot;)
     @gen_3D_coords(&quot;fast&quot;)
@@ -62,7 +62,7 @@ end</code></pre><h2 id="Add-Partial-Charges"><a class="docs-heading-anchor" href
     @add_partial_charges(&quot;gasteiger&quot;)
     @output_as(&quot;charged.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L550-L569">source</a></section></article><h3 id="Usage-Examples-3"><a class="docs-heading-anchor" href="#Usage-Examples-3">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-3" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Gasteiger charges (default)
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L550-L569">source</a></section></article><h3 id="Usage-Examples-3"><a class="docs-heading-anchor" href="#Usage-Examples-3">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-3" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Gasteiger charges (default)
 @chain begin
     @read_file(&quot;molecules.smi&quot;, &quot;smi&quot;)
     @gen_3D_coords(&quot;fast&quot;)
@@ -83,7 +83,7 @@ end</code></pre><p>Available charge methods:</p><table><tr><th style="text-align
     @canonicalize()
     @output_as(&quot;canonical.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L574-L588">source</a></section></article><h3 id="Usage-Examples-4"><a class="docs-heading-anchor" href="#Usage-Examples-4">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-4" title="Permalink"></a></h3><p>Standardize molecular representation:</p><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L574-L588">source</a></section></article><h3 id="Usage-Examples-4"><a class="docs-heading-anchor" href="#Usage-Examples-4">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-4" title="Permalink"></a></h3><p>Standardize molecular representation:</p><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;compounds.smi&quot;, &quot;smi&quot;)
     @canonicalize()
     @output_as(&quot;canonical_structures.smi&quot;, &quot;smi&quot;)
@@ -94,7 +94,7 @@ end</code></pre><h2 id="Generate-Conformers"><a class="docs-heading-anchor" href
     @generate_conformers()
     @output_as(&quot;conformers.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/38ce0dd200819bcc2503070ecc5198d7803a75a0/src/macros.jl#L593-L608">source</a></section></article><h3 id="Usage-Examples-5"><a class="docs-heading-anchor" href="#Usage-Examples-5">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-5" title="Permalink"></a></h3><p>Generate multiple conformations:</p><pre><code class="language-julia hljs">@chain begin
+end</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/MoleculeHub/OpenBabel.jl/blob/b84c34177d49d63d0cff8a70a3f2fe36822d83dc/src/macros.jl#L593-L608">source</a></section></article><h3 id="Usage-Examples-5"><a class="docs-heading-anchor" href="#Usage-Examples-5">Usage Examples</a><a class="docs-heading-anchor-permalink" href="#Usage-Examples-5" title="Permalink"></a></h3><p>Generate multiple conformations:</p><pre><code class="language-julia hljs">@chain begin
     @read_file(&quot;flexible_molecules.smi&quot;, &quot;smi&quot;)
     @gen_3D_coords(&quot;med&quot;)
     @generate_conformers()
@@ -123,4 +123,4 @@ end</code></pre><h3 id="Drug-Discovery-Pipeline"><a class="docs-heading-anchor" 
     @sort_by_reverse(&quot;logP&quot;)         # Rank by lipophilicity
     @output_as(&quot;optimized_candidates.sdf&quot;, &quot;sdf&quot;)
     @execute
-end</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../filtering/">« Filtering &amp; Matching Macros</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Thursday 18 September 2025 05:23">Thursday 18 September 2025</span>. Using Julia version 1.11.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+end</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../filtering/">« Filtering &amp; Matching Macros</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Thursday 18 September 2025 20:52">Thursday 18 September 2025</span>. Using Julia version 1.11.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
